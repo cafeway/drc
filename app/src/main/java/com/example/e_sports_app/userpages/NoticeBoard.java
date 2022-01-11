@@ -1,15 +1,17 @@
-package com.example.e_sports_app;
+package com.example.e_sports_app.userpages;
 
 
 import android.app.Activity;
 import android.os.Bundle;
 
-public class MainActivity extends Activity {
+import com.example.e_sports_app.R;
+
+public class NoticeBoard extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_notice_board);
     }
 
 }
