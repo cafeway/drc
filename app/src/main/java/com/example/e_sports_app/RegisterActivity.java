@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,6 +13,9 @@ import android.widget.Toast;
 import com.example.e_sports_app.data.User;
 import com.example.e_sports_app.helpers.DbHelper;
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RegisterActivity extends Activity {
     TextInputEditText inputName,inputEmail,inputPhone,inputPassword1,inputPassword2;
@@ -35,9 +39,12 @@ public class RegisterActivity extends Activity {
         registerButton=findViewById(R.id.registerBtn);
 
 //        Initialize dbHelper
-
+        val id = listOf("Material", "Design", "Components", "Android")
+        val adapter = ArrayAdapter(requireContext(), R.layout.list_item, items)
+        (textField.editText as? AutoCompleteTextView)?.setAdapter(adapter)
         DbHelper helper = new DbHelper(getApplicationContext());
-
+        List<String> items= new ArrayList<>();
+        ArrayAdapter arrayAdapter= new ArrayAdapter(getApplicationContext(),R.layout.list_item_usertype,items);
 //        Set listener to the button
         registerButton.setOnClickListener(v -> {
 //                Check if passwords match
@@ -45,7 +52,7 @@ public class RegisterActivity extends Activity {
 
 //                    Pass data to data class and pass data class to function
 
-                User user = new User(inputName.getText().toString(), inputEmail.getText().toString(),inputPhone.getText().toString(), inputPassword1.getText().toString());
+                User user = new User(inputName.getText().toString(), inputEmail.getText().toString(),inputPhone.getText().toString(), inputPassword1.getText().toString(),"pending","user");
                 helper.registerUser(user);
             }
             else
@@ -60,8 +67,5 @@ public class RegisterActivity extends Activity {
         Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
         startActivity(intent);
     });
-
-
-
     }
 }

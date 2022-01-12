@@ -1,13 +1,35 @@
 package com.example.e_sports_app.data;
 
 public class User {
-    String name,email,phone_number,password;
-
-    public User(String name, String email, String phone_number, String password) {
+    String name;
+    String email;
+    String phone_number;
+    String password;
+    String status;
+    String usertype;
+    public User(String name, String email, String phone_number, String password, String status,String usertype) {
         this.name = name;
         this.email = email;
         this.phone_number = phone_number;
         this.password = password;
+        this.status = status;
+        this.usertype = usertype;
+    }
+
+    public String getUsertype() {
+        return usertype;
+    }
+
+    public void setUsertype(String usertype) {
+        this.usertype = usertype;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getName() {

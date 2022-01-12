@@ -1,6 +1,7 @@
 package com.example.e_sports_app;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,6 +37,12 @@ public class LoginActivity extends Activity {
 
 //            Calling the login function
             helper.loginUser(inputEmail.getText().toString(),inputPassword.getText().toString());
+        });
+
+
+//        open registration page
+        openReg.setOnClickListener(v->{
+            startActivity(new Intent(this,RegisterActivity.class));
         });
     }
 }
