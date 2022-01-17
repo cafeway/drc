@@ -1,14 +1,13 @@
 package com.example.e_sports_app.data;
 
 public class Game {
-    String team1_name,team2_name,play_date,start_time,end_time,score_team1,score_team_2,game_status;
+    String team1_name,team2_name,play_date,play_time,score_team1,score_team_2,game_status;
 
-    public Game(String team1_name, String team2_name, String play_date, String start_time, String end_time, String score_team1, String score_team_2, String game_status) {
+    public Game(String team1_name, String team2_name, String play_date, String play_time, String score_team1, String score_team_2, String game_status) {
         this.team1_name = team1_name;
         this.team2_name = team2_name;
         this.play_date = play_date;
-        this.start_time = start_time;
-        this.end_time = end_time;
+        this.play_time = play_time;
         this.score_team1 = score_team1;
         this.score_team_2 = score_team_2;
         this.game_status = game_status;
@@ -38,20 +37,12 @@ public class Game {
         this.play_date = play_date;
     }
 
-    public String getStart_time() {
-        return start_time;
+    public String getPlay_time() {
+        return play_time;
     }
 
-    public void setStart_time(String start_time) {
-        this.start_time = start_time;
-    }
-
-    public String getEnd_time() {
-        return end_time;
-    }
-
-    public void setEnd_time(String end_time) {
-        this.end_time = end_time;
+    public void setPlay_time(String play_time) {
+        this.play_time = play_time;
     }
 
     public String getScore_team1() {

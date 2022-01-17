@@ -246,7 +246,7 @@ public class DbHelper {
                 {
                     if (doc.exists())
                     {
-                        Game game = new Game(doc.getString("team1_name"), doc.getString("team2_name"), doc.getString("play_date"),"start_time","end_time",doc.getString("score_team1"),doc.getString("score_team_2"),"game_status");
+                        Game game = new Game(doc.getString("team1_name"), doc.getString("team2_name"), doc.getString("play_date"),"play_time",doc.getString("score_team1"),doc.getString("score_team_2"),"game_status");
                         list.add(game);
                         adapter.notifyDataSetChanged();
                     }
@@ -301,7 +301,7 @@ public class DbHelper {
                 {
                     if (doc.exists())
                     {
-                        Game game = new Game(doc.getString("team1_name"), doc.getString("team2_name"), doc.getString("play_date"),"start_time","end_time",doc.getString("score_team1"),doc.getString("score_team_2"),"game_status");
+                        Game game = new Game(doc.getString("team1_name"), doc.getString("team2_name"), doc.getString("play_date"),doc.getString("play_time"),doc.getString("score_team1"),doc.getString("score_team_2"),"game_status");
                         list.add(game);
                         adapter.notifyDataSetChanged();
                     }

@@ -69,7 +69,8 @@ public class ManageTeams extends Activity implements TeamAdapter.UserListener{
     }
     @Override
     public void onAddBtnClick(int position) {
-
+        Intent intent = new Intent(getApplicationContext(),NewGameActivity.class);
+        startActivity(intent);
     }
 
     @Override
