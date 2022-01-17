@@ -34,7 +34,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_manage_users,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_teams,parent,false);
         return new ViewHolder(view);
     }
 
@@ -44,7 +44,6 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder> {
         String description = UserList.get(position).getDescription();
         holder.setData(name,description);
 //        holder.SetImage(context,image);
-
     }
 
     @Override

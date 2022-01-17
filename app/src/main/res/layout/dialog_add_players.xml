@@ -8,14 +8,24 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="team_name"
+        android:hint="player name"
         android:id="@+id/team_name"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="team description"
+        android:hint="player shirt number"
         android:id="@+id/team_description"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose role"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/player_role"
         />
     <Button
         android:layout_width="match_parent"
