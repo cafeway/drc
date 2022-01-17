@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
+    android:gravity="center"
     tools:context=".dashboards.UserDashBoard">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,11 +16,12 @@
         android:weightSum="2"
         >
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/Open_notice_board"
+            android:id="@+id/open_notice_board"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:cardElevation="8dp"
+            app:cardElevation="10dp"
+            android:clickable="true"
             android:layout_margin="8dp">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -28,13 +31,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:gravity="center"
                     android:padding="16dp">
-
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/notice"
+                            />
                     <!-- Title, secondary and supporting text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Notice Board"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         />
                 </LinearLayout>
@@ -46,7 +56,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:cardElevation="8dp"
+            app:cardElevation="10dp"
+            android:clickable="true"
             android:layout_margin="8dp">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -56,13 +67,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:gravity="center"
                     android:padding="16dp">
-
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/games2"
+                        />
                     <!-- Title, secondary and supporting text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Games"
+                        android:layout_marginTop="5dp"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         />
                 </LinearLayout>
@@ -80,27 +97,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:cardElevation="8dp"
+            app:cardElevation="10dp"
+            android:clickable="true"
             android:layout_margin="8dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:gravity="center"
                     android:padding="16dp">
-
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/faq"
+                        />
                     <!-- Title, secondary and supporting text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="FaQs"
+                        android:layout_marginTop="5dp"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         />
                 </LinearLayout>
-            </LinearLayout>
+
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -108,27 +129,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:cardElevation="8dp"
+            app:cardElevation="10dp"
+            android:clickable="true"
             android:layout_margin="8dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:gravity="center"
                     android:padding="16dp">
-
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/feedback"
+                        />
                     <!-- Title, secondary and supporting text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="FeedBack"
+                        android:layout_marginTop="5dp"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         />
                 </LinearLayout>
-            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 </LinearLayout>

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
+    android:gravity="center"
     tools:context=".dashboards.AdminDashboard">
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,59 +15,66 @@
         android:weightSum="2"
         >
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/Open_notice_board"
+            android:id="@+id/open_manage_users"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:cardElevation="8dp"
+            app:cardElevation="10dp"
+            android:clickable="true"
             android:layout_margin="8dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:gravity="center"
                     android:padding="16dp">
-
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/manageuser"
+                        />
                     <!-- Title, secondary and supporting text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Manage Users"
+                        android:textAlignment="center"
+                        android:layout_marginTop="5dp"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         />
                 </LinearLayout>
-            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/open_games_page"
+            android:id="@+id/open_manage_games"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:cardElevation="8dp"
+            app:cardElevation="10dp"
+            android:clickable="true"
             android:layout_margin="8dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:gravity="center"
                     android:padding="16dp">
-
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/games3"
+                        />
                     <!-- Title, secondary and supporting text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Manage Games"
+                        android:textAlignment="center"
+                        android:layout_marginTop="5dp"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         />
                 </LinearLayout>
-            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
     <LinearLayout
@@ -76,58 +84,99 @@
         android:weightSum="2"
         >
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/Open_faqs"
+            android:id="@+id/open_manage_notices"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:cardElevation="8dp"
+            android:clickable="true"
             android:layout_margin="8dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:gravity="center"
                     android:padding="16dp">
-
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/notice"
+                        />
                     <!-- Title, secondary and supporting text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Manage Notices"
+                        android:text="Manage Notice"
+                        android:textAlignment="center"
+                        android:layout_marginTop="5dp"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         />
                 </LinearLayout>
-            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/open_feedback"
+            android:id="@+id/open_manage_faq"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:cardElevation="8dp"
+            android:clickable="true"
             android:layout_margin="8dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:gravity="center"
                     android:padding="16dp">
-
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/faq"
+                        />
                     <!-- Title, secondary and supporting text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add Faq"
+                        android:text="Manage FAQ'S"
+                        android:textAlignment="center"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         />
                 </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        >
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/open_manage_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardElevation="8dp"
+            android:clickable="true"
+            android:layout_margin="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/feedback"
+                    />
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manage FeedBack"
+                    android:textAlignment="center"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>

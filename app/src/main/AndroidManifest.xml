@@ -10,6 +10,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.E_Sports_App">
         <activity
+            android:name=".userpages.FaqActivity"
+            android:exported="false" />
+        <activity
+            android:name=".userpages.GamesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".userpages.FeedbackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".adminpages.ManageFeedBack"
+            android:exported="false" />
+        <activity
+            android:name=".adminpages.ManageGames"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".adminpages.CreateUser"
+            android:exported="false" />
+        <activity
+            android:name=".adminpages.CreateFaq"
+            android:exported="false" />
+        <activity
+            android:name=".adminpages.ManageFaq"
+            android:exported="false" />
+        <activity
+            android:name=".adminpages.CreateNotice"
+            android:exported="false" />
+        <activity
             android:name=".adminpages.ManageNotices"
             android:exported="false" />
         <activity
@@ -20,26 +50,25 @@
             android:exported="false" />
         <activity
             android:name=".dashboards.AdminDashboard"
-            android:exported="false" />
-        <activity
-            android:name=".userpages.user.NoticeBoard"
-            android:exported="false" />
+            android:exported="false">
+
+        </activity>
         <activity
             android:name=".dashboards.UserDashBoard"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity android:name=".MainActivity">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -1,9 +1,14 @@
 package com.example.e_sports_app.data;
 
-public class Notice {
-    String title,description,time;
+import com.google.firebase.firestore.ServerTimestamp;
 
-    public Notice(String title, String description, String time) {
+import java.util.Date;
+
+public class Notice {
+    String title,description;
+    @ServerTimestamp Date time;
+
+    public Notice(String title, String description, Date time) {
         this.title = title;
         this.description = description;
         this.time = time;
@@ -25,11 +30,11 @@ public class Notice {
         this.description = description;
     }
 
-    public String getTime() {
+    public Date getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 }

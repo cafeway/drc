@@ -8,6 +8,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.e_sports_app.LoginActivity;
+import com.example.e_sports_app.adapters.FaqAdapter;
+import com.example.e_sports_app.adapters.FeedbackAdapter;
+import com.example.e_sports_app.adapters.GamesAdapter;
+import com.example.e_sports_app.adapters.NoticeAdapter;
+import com.example.e_sports_app.adapters.UserAdapter;
+import com.example.e_sports_app.dashboards.AdminDashboard;
 import com.example.e_sports_app.dashboards.UserDashBoard;
 import com.example.e_sports_app.data.Faq;
 import com.example.e_sports_app.data.Feedback;
@@ -15,6 +21,7 @@ import com.example.e_sports_app.data.Game;
 import com.example.e_sports_app.data.Notice;
 import com.example.e_sports_app.data.Player;
 import com.example.e_sports_app.data.User;
+import com.example.e_sports_app.data.getFaq;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomappbar.BottomAppBar;
@@ -31,6 +38,23 @@ public class DbHelper {
 
     public DbHelper(Context context) {
         this.context = context;
+    }
+
+    public void checkUser(User user){
+        db.collection("users").document(user.getEmail()).get().addOnSuccessListener(task->{
+            if (!task.exists())
+            {
+                createAdmin(user);
+            }
+        });
+    }
+    public void createAdmin(User user)
+    {
+        db.collection("users").document(user.getEmail()).set(user).addOnCompleteListener(task -> {
+            Toast.makeText(context, "User Registered Successfully", Toast.LENGTH_SHORT).show();
+        }).addOnFailureListener(error->{
+            Toast.makeText(context, error.getMessage()+ "Failed to register user!", Toast.LENGTH_SHORT).show();
+        });
     }
     public void registerUser(User user)
     {
@@ -59,8 +83,14 @@ public class DbHelper {
                 String pass= res.get("password").toString();
                 if (pass.equals(password))
                 {
-                    Toast.makeText(context, "User logged in successfully!!", Toast.LENGTH_SHORT).show();
-                    context.startActivity(new Intent(context, UserDashBoard.class));
+                    Toast.makeText(context, "Logged in successfully!!", Toast.LENGTH_SHORT).show();
+                    if (res.get("usertype").toString().equals("user")) {
+                        context.startActivity(new Intent(context, UserDashBoard.class));
+                    }
+                    else if (res.get("usertype").toString().equals("admin"))
+                    {
+                        context.startActivity(new Intent(context, AdminDashboard.class));
+                    }
                 }
             }
             else {
@@ -69,7 +99,32 @@ public class DbHelper {
         });
     }
 
+//    Manage User Admin functions
 
+    public void deleteUser(String email)
+    {
+        db.collection("users").document(email).delete().addOnSuccessListener(task->{
+            Toast.makeText(context, "User Deleted Successfully!", Toast.LENGTH_SHORT).show();
+        });
+    }
+    public void approveUser(String email)
+    {
+        db.collection("users").document(email).update("status","approved").addOnSuccessListener(task->{
+            Toast.makeText(context, "User Approved Successfully!", Toast.LENGTH_SHORT).show();
+        });
+    }
+    public void disableUser(String email)
+    { 
+        db.collection("users").document(email).update("status","disabled").addOnSuccessListener(task->{
+            Toast.makeText(context, "User Disabled Successfully!", Toast.LENGTH_SHORT).show();
+        });  
+    }
+    public void rejectUser(String email)
+    {
+        db.collection("users").document(email).update("status","rejected").addOnSuccessListener(task->{
+            Toast.makeText(context, "User Rejected Successfully!", Toast.LENGTH_SHORT).show();
+        });
+    }
 //Adding data functions
 
 
@@ -121,7 +176,7 @@ public class DbHelper {
 
 //    Getting data functions
 
-    public void getNotices(RecyclerView recyclerView)
+    public void getNotices(List<Notice> list, NoticeAdapter adapter)
     {
         db.collection("notices").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -130,7 +185,10 @@ public class DbHelper {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot documentSnapshot : task.getResult())
                     {
+                    Notice notice = new Notice(documentSnapshot.get("title").toString(),documentSnapshot.get("description").toString(),null);
 
+                   list.add(notice);
+                   adapter.notifyDataSetChanged();
                     }
 
                 }
@@ -138,6 +196,77 @@ public class DbHelper {
         });
     }
 
+    public void getUsers(List<User> list, UserAdapter adapter)
+    {
+        db.collection("users").get().addOnCompleteListener(task -> {
 
+            if (task.isSuccessful()) {
+                for (QueryDocumentSnapshot doc : task.getResult())
+                {
+                    if (doc.exists())
+                    {
+                        User user = new User(doc.getString("name"),doc.getString("email"),doc.getString("phone_number"),"",doc.getString("status"),doc.getString("usertype"));
+                        list.add(user);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
 
+            }
+        });
+    }
+
+    public void getFeedback(List<Feedback> list, FeedbackAdapter adapter)
+    {
+        db.collection("feedback").get().addOnCompleteListener(task -> {
+
+            if (task.isSuccessful()) {
+                for (QueryDocumentSnapshot doc : task.getResult())
+                {
+                    if (doc.exists())
+                    {
+                        Feedback feedback = new Feedback(doc.getString("title"),doc.getString("description"));
+                        list.add(feedback);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+
+            }
+        });
+    }
+
+    public void getGames(List<Game> list, GamesAdapter adapter) {
+        db.collection("games").get().addOnCompleteListener(task -> {
+
+            if (task.isSuccessful()) {
+                for (QueryDocumentSnapshot doc : task.getResult())
+                {
+                    if (doc.exists())
+                    {
+                        Game game = new Game(doc.getString("team1_name"), doc.getString("team2_name"), doc.getString("play_date"),"start_time","end_time",doc.getString("score_team1"),doc.getString("score_team_2"),"game_status");
+                        list.add(game);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+
+            }
+        });
+    }
+
+    public void getFAQs(List<Faq> list, FaqAdapter adapter) {
+        db.collection("faq").get().addOnCompleteListener(task -> {
+
+            if (task.isSuccessful()) {
+                for (QueryDocumentSnapshot doc : task.getResult())
+                {
+                    if (doc.exists())
+                    {
+                        Faq faq = new Faq(doc.getString("title"),doc.getString("description"));
+                        list.add(faq);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+
+            }
+        });
+    }
 }

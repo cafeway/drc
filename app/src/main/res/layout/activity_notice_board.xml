@@ -6,9 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".userpages.NoticeBoard">
-<androidx.recyclerview.widget.RecyclerView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/my_recycler_view"
-    />
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolBar"
+            android:background="#FD2BF307"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/my_recycler_view"
+            />
 </LinearLayout>

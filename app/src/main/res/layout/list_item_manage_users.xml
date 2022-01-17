@@ -15,8 +15,6 @@
             android:orientation="vertical">
 
             <!-- Media -->
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -24,13 +22,26 @@
                 android:padding="16dp">
 
                 <!-- Title, secondary and supporting text -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Peter kiprop"
-                    android:id="@+id/manage_user_name"
-                    android:textAppearance="?attr/textAppearanceHeadline6"
-                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Peter kiprop"
+                        android:layout_weight="1"
+                        android:id="@+id/manage_user_name"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        />
+
+                    <ImageView
+                        android:layout_gravity="right"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/manage_user_delete"
+                        android:src="@drawable/ic_baseline_delete_24"
+                        />
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -41,7 +52,24 @@
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"
                     />
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="user_type"
+                    android:id="@+id/manage_user_type"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="0741734820"
+                    android:id="@+id/manage_user_phone_number"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    />
             </LinearLayout>
 
             <!-- Buttons -->
@@ -49,13 +77,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:layout_gravity="center"
                 android:orientation="horizontal">
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:text="approve"
-                    android:id="@+id/manage_user_edit"
+                    android:id="@+id/manage_user_approve"
                     style="?attr/borderlessButtonStyle"
                     />
                 <com.google.android.material.button.MaterialButton
@@ -72,13 +101,7 @@
                     android:id="@+id/manage_user_disable"
                     style="?attr/borderlessButtonStyle"
                     />
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Delete"
-                    android:id="@+id/manage_user_delete"
-                    style="?attr/borderlessButtonStyle"
-                    />
+
             </LinearLayout>
 
         </LinearLayout>

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.e_sports_app.R;
 import com.example.e_sports_app.data.Notice;
 
+import java.util.Date;
 import java.util.List;
 
 public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder> {
@@ -36,8 +37,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String title=UserList.get(position).getTitle();
         String description=UserList.get(position).getDescription();
-        String time=UserList.get(position).getTime();
-        holder.setData(title,description,time);
+        holder.setData(title,description);
 //        holder.SetImage(context,image);
 
     }
@@ -60,10 +60,10 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
 
         }
 
-        public void setData(String title, String description, String time){
+        public void setData(String title, String description){
             tv_time.setText(title);
             tv_description.setText(description);
-            tv_time.setText(time);
+//            tv_time.setText(time);
         }
 
 //        public void SetImage(final Context c,final String image){
