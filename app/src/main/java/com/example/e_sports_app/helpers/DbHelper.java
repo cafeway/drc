@@ -12,7 +12,10 @@ import com.example.e_sports_app.adapters.FaqAdapter;
 import com.example.e_sports_app.adapters.FeedbackAdapter;
 import com.example.e_sports_app.adapters.GamesAdapter;
 import com.example.e_sports_app.adapters.NoticeAdapter;
+import com.example.e_sports_app.adapters.TeamAdapter;
 import com.example.e_sports_app.adapters.UserAdapter;
+import com.example.e_sports_app.adapters.UserGamesAdapter;
+import com.example.e_sports_app.adapters.UserNoticeBoard;
 import com.example.e_sports_app.dashboards.AdminDashboard;
 import com.example.e_sports_app.dashboards.UserDashBoard;
 import com.example.e_sports_app.data.Faq;
@@ -20,6 +23,7 @@ import com.example.e_sports_app.data.Feedback;
 import com.example.e_sports_app.data.Game;
 import com.example.e_sports_app.data.Notice;
 import com.example.e_sports_app.data.Player;
+import com.example.e_sports_app.data.Team;
 import com.example.e_sports_app.data.User;
 import com.example.e_sports_app.data.getFaq;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -269,4 +273,80 @@ public class DbHelper {
             }
         });
     }
+
+    public void getUserNotices(List<Notice> list, UserNoticeBoard adapter) {
+        db.collection("notices").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot documentSnapshot : task.getResult())
+                    {
+                        Notice notice = new Notice(documentSnapshot.get("title").toString(),documentSnapshot.get("description").toString(),null);
+
+                        list.add(notice);
+                        adapter.notifyDataSetChanged();
+                    }
+
+                }
+            }
+        });
+    }
+
+    public void getUserGames(List<Game> list, UserGamesAdapter adapter) {
+        db.collection("games").get().addOnCompleteListener(task -> {
+
+            if (task.isSuccessful()) {
+                for (QueryDocumentSnapshot doc : task.getResult())
+                {
+                    if (doc.exists())
+                    {
+                        Game game = new Game(doc.getString("team1_name"), doc.getString("team2_name"), doc.getString("play_date"),"start_time","end_time",doc.getString("score_team1"),doc.getString("score_team_2"),"game_status");
+                        list.add(game);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+
+            }
+        });
+    }
+    public void addTeam(Team team)
+    {
+        db.collection("teams").document().set(team).addOnSuccessListener(task->{
+            Toast.makeText(context, "Team Added successfully.", Toast.LENGTH_SHORT).show();
+        }).addOnFailureListener(error->{
+            Toast.makeText(context, "Failed to add team!", Toast.LENGTH_SHORT).show();
+        });
+    }
+    public void addPlayer(Player player)
+    {
+        db.collection("players").document().set(player).addOnSuccessListener(task->{
+            Toast.makeText(context, "Player Added successfully.", Toast.LENGTH_SHORT).show();
+        }).addOnFailureListener(error->{
+            Toast.makeText(context, "Failed to add player!", Toast.LENGTH_SHORT).show();
+        });
+    }
+
+
+    public void getTeams(List<Team> list, TeamAdapter adapter) {
+        db.collection("teams").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot documentSnapshot : task.getResult())
+                    {
+                        Team team = new Team(documentSnapshot.getId(),documentSnapshot.get("title").toString(),documentSnapshot.get("description").toString());
+
+                        list.add(team);
+                        adapter.notifyDataSetChanged();
+                    }
+
+                }
+            }
+        });
+    }
+
+
+
 }

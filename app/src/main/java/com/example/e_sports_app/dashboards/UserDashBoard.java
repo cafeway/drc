@@ -19,7 +19,7 @@ MaterialCardView open_games,open_fAs,open_feedback,open_notices;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dash_board);
 
-        open_fAs =findViewById(R.id.open_manage_faq);
+        open_fAs =findViewById(R.id.open_faqs);
         open_games =findViewById(R.id.open_games_page);
         open_feedback =findViewById(R.id.open_feedback);
         open_notices =findViewById(R.id.open_notice_board);

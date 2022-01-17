@@ -17,10 +17,10 @@ import com.example.e_sports_app.data.Notice;
 import java.util.Date;
 import java.util.List;
 
-public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder> {
+public class UserNoticeBoard extends RecyclerView.Adapter<UserNoticeBoard.ViewHolder> {
     private List<Notice> UserList;
     private Context context;
-    public NoticeAdapter(List<Notice>UserList, Context context){
+    public UserNoticeBoard(List<Notice>UserList, Context context){
 
         this.UserList=UserList;
         this.context=context;
@@ -29,7 +29,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_notices,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_user_noticeboard,parent,false);
         return new ViewHolder(view);
     }
 

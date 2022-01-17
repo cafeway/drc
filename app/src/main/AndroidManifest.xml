@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.E_Sports_App">
         <activity
+            android:name=".adminpages.ManageTeams"
+            android:exported="false" />
+        <activity
             android:name=".userpages.FaqActivity"
             android:exported="false" />
         <activity
@@ -50,9 +53,7 @@
             android:exported="false" />
         <activity
             android:name=".dashboards.AdminDashboard"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".dashboards.UserDashBoard"
             android:exported="true">

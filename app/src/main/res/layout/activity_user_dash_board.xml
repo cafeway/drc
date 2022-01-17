@@ -93,7 +93,7 @@
         android:weightSum="2"
         >
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/Open_faqs"
+            android:id="@+id/open_faqs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
