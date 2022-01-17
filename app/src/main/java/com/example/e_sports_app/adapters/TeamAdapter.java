@@ -55,7 +55,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_name;
-        Button btn_add_player;
+        ImageView btn_add_player;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 

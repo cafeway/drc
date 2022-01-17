@@ -2,9 +2,13 @@ package com.example.e_sports_app.adminpages;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toolbar;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +17,7 @@ import com.example.e_sports_app.adapters.NoticeAdapter;
 import com.example.e_sports_app.adapters.TeamAdapter;
 import com.example.e_sports_app.data.Notice;
 import com.example.e_sports_app.data.Team;
+import com.example.e_sports_app.dialogs.ViewDialog;
 import com.example.e_sports_app.helpers.DbHelper;
 
 import java.util.ArrayList;
@@ -65,5 +70,23 @@ public class ManageTeams extends Activity implements TeamAdapter.UserListener{
     @Override
     public void onAddBtnClick(int position) {
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item_notices,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.add_icon:
+                ViewDialog dialog = new ViewDialog();
+                dialog.showAddTeamDialog(ManageTeams.this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

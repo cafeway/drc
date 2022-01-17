@@ -10,11 +10,12 @@ import com.example.e_sports_app.adminpages.ManageFaq;
 import com.example.e_sports_app.adminpages.ManageFeedBack;
 import com.example.e_sports_app.adminpages.ManageGames;
 import com.example.e_sports_app.adminpages.ManageNotices;
+import com.example.e_sports_app.adminpages.ManageTeams;
 import com.example.e_sports_app.adminpages.ManageUsers;
 import com.google.android.material.card.MaterialCardView;
 
 public class AdminDashboard extends Activity {
-MaterialCardView open_manage_users,open_manage_notices,open_manage_games,open_manage_faq,open_manage_feedback;
+MaterialCardView open_manage_users,open_manage_notices,open_manage_games,open_manage_faq,open_manage_feedback,open_manage_teams;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +26,7 @@ MaterialCardView open_manage_users,open_manage_notices,open_manage_games,open_ma
         open_manage_games = findViewById(R.id.open_manage_games);
         open_manage_faq = findViewById(R.id.open_manage_faq);
         open_manage_feedback = findViewById(R.id.open_manage_feedback);
+        open_manage_teams = findViewById(R.id.open_manage_teams);
 
         open_manage_users.setOnClickListener(v->{
             Intent intent= new Intent(getApplicationContext(), ManageUsers.class);
@@ -47,5 +49,10 @@ MaterialCardView open_manage_users,open_manage_notices,open_manage_games,open_ma
             Intent intent= new Intent(getApplicationContext(), ManageFeedBack.class);
             startActivity(intent);
         });
+
+        open_manage_teams.setOnClickListener(v->{
+        Intent intent= new Intent(getApplicationContext(), ManageTeams.class);
+        startActivity(intent);
+    });
     }
 }

@@ -336,7 +336,7 @@ public class DbHelper {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot documentSnapshot : task.getResult())
                     {
-                        Team team = new Team(documentSnapshot.getId(),documentSnapshot.get("title").toString(),documentSnapshot.get("description").toString());
+                        Team team = new Team(documentSnapshot.getId(),documentSnapshot.get("name").toString(),documentSnapshot.get("description").toString());
 
                         list.add(team);
                         adapter.notifyDataSetChanged();
