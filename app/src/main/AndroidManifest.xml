@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.E_Sports_App">
         <activity
+            android:name=".adminpages.ManageRequests"
+            android:exported="false" />
+        <activity
+            android:name=".captain.EquipmentRequests"
+            android:exported="false" />
+        <activity
+            android:name=".captain.BookEquipment"
+            android:exported="false" />
+        <activity
             android:name=".userpages.TeamMembers"
             android:exported="false" />
         <activity

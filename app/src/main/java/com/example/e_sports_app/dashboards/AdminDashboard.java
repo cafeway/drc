@@ -13,12 +13,13 @@ import com.example.e_sports_app.adminpages.ManageFaq;
 import com.example.e_sports_app.adminpages.ManageFeedBack;
 import com.example.e_sports_app.adminpages.ManageGames;
 import com.example.e_sports_app.adminpages.ManageNotices;
+import com.example.e_sports_app.adminpages.ManageRequests;
 import com.example.e_sports_app.adminpages.ManageTeams;
 import com.example.e_sports_app.adminpages.ManageUsers;
 import com.google.android.material.card.MaterialCardView;
 
 public class AdminDashboard extends Activity {
-MaterialCardView open_manage_users,open_manage_notices,open_manage_games,open_manage_faq,open_manage_feedback,open_manage_teams,card_logout;
+MaterialCardView open_manage_users,open_manage_notices,open_manage_games,open_manage_faq,open_manage_feedback,open_manage_teams,card_logout,open_manage_requests;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ MaterialCardView open_manage_users,open_manage_notices,open_manage_games,open_ma
         open_manage_feedback = findViewById(R.id.open_manage_feedback);
         open_manage_teams = findViewById(R.id.open_manage_teams);
         card_logout = findViewById(R.id.card_logout);
+        open_manage_requests = findViewById(R.id.open_manage_requests);
 
         open_manage_users.setOnClickListener(v->{
             Intent intent= new Intent(getApplicationContext(), ManageUsers.class);
@@ -58,6 +60,10 @@ MaterialCardView open_manage_users,open_manage_notices,open_manage_games,open_ma
         Intent intent= new Intent(getApplicationContext(), ManageTeams.class);
         startActivity(intent);
     });
+        open_manage_requests.setOnClickListener(v->{
+            Intent intent= new Intent(getApplicationContext(), ManageRequests.class);
+            startActivity(intent);
+        });
 
         card_logout.setOnClickListener(v -> {
 

@@ -6,18 +6,21 @@
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/drawable/edit_text_style1.xml" value="0.2203125" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_add_player.xml" value="0.13177083333333334" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.25" />
+        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_book_equipment.xml" value="0.1" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_create_faq.xml" value="0.1" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_create_notice.xml" value="0.18" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_create_user.xml" value="0.16" />
+        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_equipment_requests.xml" value="0.13645833333333332" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_faq.xml" value="0.13385416666666666" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_feedback.xml" value="0.1" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_games.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_manage_faq.xml" value="0.1375" />
-        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_manage_feed_back.xml" value="0.18125" />
+        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_manage_feed_back.xml" value="0.1" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_manage_games.xml" value="0.18125" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_manage_notices.xml" value="0.15648148148148147" />
+        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_manage_requests.xml" value="0.1" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_manage_teams.xml" value="0.10729166666666666" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_manage_users.xml" value="0.12552083333333333" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_new_game.xml" value="0.22" />
@@ -25,13 +28,15 @@
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_splash.xml" value="0.22" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_team_members.xml" value="0.1046875" />
-        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_user_dash_board.xml" value="0.22" />
+        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_user_dash_board.xml" value="0.1" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/custom_dialog_one.xml" value="0.12760416666666666" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/dialog_add_players.xml" value="0.17549491706795078" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/dialog_add_team.xml" value="0.13177083333333334" />
+        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/list_item_admin_equipment.xml" value="0.15052083333333333" />
+        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/list_item_captain_equipment.xml" value="0.15052083333333333" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/list_item_faq.xml" value="0.18" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/list_item_feedback.xml" value="0.18125" />
-        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/list_item_manage_game.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/list_item_manage_game.xml" value="0.1" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/list_item_manage_users.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/list_item_notices.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/list_item_teams.xml" value="0.4536652835408022" />

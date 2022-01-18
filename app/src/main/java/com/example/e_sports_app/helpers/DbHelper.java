@@ -5,9 +5,12 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresPermission;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.e_sports_app.LoginActivity;
+import com.example.e_sports_app.adapters.AdminEquipmentAdapter;
+import com.example.e_sports_app.adapters.EquipmentAdapter;
 import com.example.e_sports_app.adapters.FaqAdapter;
 import com.example.e_sports_app.adapters.FeedbackAdapter;
 import com.example.e_sports_app.adapters.GamesAdapter;
@@ -18,6 +21,7 @@ import com.example.e_sports_app.adapters.UserGamesAdapter;
 import com.example.e_sports_app.adapters.UserNoticeBoard;
 import com.example.e_sports_app.dashboards.AdminDashboard;
 import com.example.e_sports_app.dashboards.UserDashBoard;
+import com.example.e_sports_app.data.EquipMent;
 import com.example.e_sports_app.data.Faq;
 import com.example.e_sports_app.data.Feedback;
 import com.example.e_sports_app.data.Game;
@@ -378,6 +382,68 @@ db.collection("games").document(team_id).update("score_team_2",team2).addOnSucce
             @Override
             public void onSuccess(Void unused) {
                 Toast.makeText(context, "Game deleted successfully!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void sendRequest(EquipMent equipMent)
+    {
+        db.collection("requests").document().set(equipMent)
+                .addOnSuccessListener(task->{
+                    Toast.makeText(context, "Request submitted successfully!Please wait for approval!!", Toast.LENGTH_SHORT).show();
+                }).addOnFailureListener(error->{
+            Toast.makeText(context, "Failed to submit request"+error.getMessage(), Toast.LENGTH_SHORT).show();
+        });
+    }
+    public void rejectRequest(String id){
+        db.collection("requests").document(id).update("status","rejected").addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(context, "Request rejected successfully!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    public void approveRequest(String id){
+        db.collection("requests").document(id).update("status","approved").addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(context, "Request approved successfully!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void getRequest(List<EquipMent> list, EquipmentAdapter adapter) {
+        db.collection("requests").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot documentSnapshot : task.getResult())
+                    {
+                        EquipMent equipMent = new EquipMent(documentSnapshot.getId(),documentSnapshot.getString("title"),documentSnapshot.getString("message"),documentSnapshot.getString("status"));
+                        list.add(equipMent);
+                        adapter.notifyDataSetChanged();
+                    }
+
+                }
+            }
+        });
+    }
+
+    public void getAdminRequest(List<EquipMent> list, AdminEquipmentAdapter adapter) {
+        db.collection("requests").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot documentSnapshot : task.getResult())
+                    {
+                        EquipMent equipMent = new EquipMent(documentSnapshot.getId(),documentSnapshot.getString("title"),documentSnapshot.getString("message"),documentSnapshot.getString("status"));
+                        list.add(equipMent);
+                        adapter.notifyDataSetChanged();
+                    }
+
+                }
             }
         });
     }

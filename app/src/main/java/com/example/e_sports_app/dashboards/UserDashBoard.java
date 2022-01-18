@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.e_sports_app.MainActivity;
 import com.example.e_sports_app.R;
+import com.example.e_sports_app.captain.EquipmentRequests;
 import com.example.e_sports_app.helpers.PreferenceHelper;
 import com.example.e_sports_app.userpages.FaqActivity;
 import com.example.e_sports_app.userpages.FeedbackActivity;
@@ -19,7 +20,7 @@ import com.example.e_sports_app.userpages.NoticeBoard;
 import com.google.android.material.card.MaterialCardView;
 
 public class UserDashBoard extends Activity {
-MaterialCardView open_games,open_fAs,open_feedback,open_notices,open_team_members,card_logout;
+MaterialCardView open_games,open_fAs,open_feedback,open_notices,open_team_members,card_logout,open_requests;
 
 
     @Override
@@ -34,6 +35,7 @@ MaterialCardView open_games,open_fAs,open_feedback,open_notices,open_team_member
         open_feedback =findViewById(R.id.open_feedback);
         open_notices =findViewById(R.id.open_notice_board);
         open_team_members = findViewById(R.id.open_team_members);
+        open_requests = findViewById(R.id.open_requests);
 
         card_logout = findViewById(R.id.card_logout);
 
@@ -45,7 +47,10 @@ MaterialCardView open_games,open_fAs,open_feedback,open_notices,open_team_member
         open_games.setOnClickListener(v->startActivity(new Intent(getApplicationContext(), GamesActivity.class)));
 
         open_team_members.setOnClickListener(v -> {
-
+            startActivity(new Intent(getApplicationContext(), GamesActivity.class));
+        });
+        open_requests.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), EquipmentRequests.class));
         });
 
         if (preferenceHelper.getType().equals("captain"))
@@ -55,7 +60,6 @@ MaterialCardView open_games,open_fAs,open_feedback,open_notices,open_team_member
 
 
         card_logout.setOnClickListener(v -> {
-
             SharedPreferences preferences=getSharedPreferences("user",MODE_PRIVATE);
             SharedPreferences.Editor editor=preferences.edit();
 
