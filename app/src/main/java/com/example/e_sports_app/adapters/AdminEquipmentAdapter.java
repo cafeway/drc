@@ -33,7 +33,7 @@ public class AdminEquipmentAdapter extends RecyclerView.Adapter<AdminEquipmentAd
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_captain_equipment,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_admin_equipment,parent,false);
         return new ViewHolder(view);
     }
 
