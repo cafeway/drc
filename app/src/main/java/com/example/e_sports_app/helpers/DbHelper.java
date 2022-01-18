@@ -27,6 +27,7 @@ import com.example.e_sports_app.data.Team;
 import com.example.e_sports_app.data.User;
 import com.example.e_sports_app.data.getFaq;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -87,9 +88,22 @@ public class DbHelper {
                 String pass= res.get("password").toString();
                 if (pass.equals(password))
                 {
-                    Toast.makeText(context, "Logged in successfully!!", Toast.LENGTH_SHORT).show();
-                    if (res.get("usertype").toString().equals("user")) {
-                        context.startActivity(new Intent(context, UserDashBoard.class));
+                    if (res.get("usertype").toString().equals("user") || res.get("usertype").toString().equals("captain")) {
+                        if (res.get("status").toString().equals("pending"))
+                        {
+
+                            Toast.makeText(context.getApplicationContext(), "Please wait for approval by the admin!!", Toast.LENGTH_LONG).show();
+                        }
+                        else
+                        {
+                            Toast.makeText(context, "Logged in successfully!!", Toast.LENGTH_SHORT).show();
+                            PreferenceHelper preferenceHelper = new PreferenceHelper(context);
+                            String type = res.get("usertype").toString();
+                            preferenceHelper.setType(type);
+                            preferenceHelper.setEmail(email);
+                            context.startActivity(new Intent(context, UserDashBoard.class));
+                        }
+
                     }
                     else if (res.get("usertype").toString().equals("admin"))
                     {
@@ -150,14 +164,7 @@ public class DbHelper {
         });
     }
 
-    public void addPlayer(Player player,String game_id)
-    {
-        db.collection("games").document(game_id).collection("players").document().set(player).addOnSuccessListener(task-> {
-            Toast.makeText(context, "Player added successfully", Toast.LENGTH_SHORT).show();
-        }).addOnFailureListener(error->{
-            Toast.makeText(context, "Failed to add game error=>:"+error.getMessage(), Toast.LENGTH_SHORT).show();
-        });
-    }
+
 
     public void sendNotice(Notice notice)
     {
@@ -246,7 +253,7 @@ public class DbHelper {
                 {
                     if (doc.exists())
                     {
-                        Game game = new Game(doc.getString("team1_name"), doc.getString("team2_name"), doc.getString("play_date"),"play_time",doc.getString("score_team1"),doc.getString("score_team_2"),"game_status");
+                        Game game = new Game(doc.getId(),doc.getString("team1_name"), doc.getString("team2_name"), doc.getString("play_date"),"play_time",doc.getString("score_team1"),doc.getString("score_team_2"),"game_status");
                         list.add(game);
                         adapter.notifyDataSetChanged();
                     }
@@ -256,7 +263,7 @@ public class DbHelper {
         });
     }
 
-    public void getFAQs(List<Faq> list, FaqAdapter adapter) {
+    public void getFAQs(List<getFaq> list, FaqAdapter adapter) {
         db.collection("faq").get().addOnCompleteListener(task -> {
 
             if (task.isSuccessful()) {
@@ -264,7 +271,7 @@ public class DbHelper {
                 {
                     if (doc.exists())
                     {
-                        Faq faq = new Faq(doc.getString("title"),doc.getString("description"));
+                        getFaq faq = new getFaq(doc.getId(), doc.getString("title"),doc.getString("description"));
                         list.add(faq);
                         adapter.notifyDataSetChanged();
                     }
@@ -301,7 +308,7 @@ public class DbHelper {
                 {
                     if (doc.exists())
                     {
-                        Game game = new Game(doc.getString("team1_name"), doc.getString("team2_name"), doc.getString("play_date"),doc.getString("play_time"),doc.getString("score_team1"),doc.getString("score_team_2"),"game_status");
+                        Game game = new Game("",doc.getString("team1_name"), doc.getString("team2_name"), doc.getString("play_date"),doc.getString("play_time"),doc.getString("score_team1"),doc.getString("score_team_2"),"game_status");
                         list.add(game);
                         adapter.notifyDataSetChanged();
                     }
@@ -318,15 +325,23 @@ public class DbHelper {
             Toast.makeText(context, "Failed to add team!", Toast.LENGTH_SHORT).show();
         });
     }
-    public void addPlayer(Player player)
+//    public void addPlayer(Player player)
+//    {
+//        db.collection("players").document().set(player).addOnSuccessListener(task->{
+//            Toast.makeText(context, "Player Added successfully.", Toast.LENGTH_SHORT).show();
+//        }).addOnFailureListener(error->{
+//            Toast.makeText(context, "Failed to add player!", Toast.LENGTH_SHORT).show();
+//        });
+//    }
+
+    public void addPlayer(Player player,String game_id)
     {
-        db.collection("players").document().set(player).addOnSuccessListener(task->{
-            Toast.makeText(context, "Player Added successfully.", Toast.LENGTH_SHORT).show();
+        db.collection("games").document(game_id).collection("players").document().set(player).addOnSuccessListener(task-> {
+            Toast.makeText(context, "Player added successfully", Toast.LENGTH_SHORT).show();
         }).addOnFailureListener(error->{
-            Toast.makeText(context, "Failed to add player!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Failed to add game error=>:"+error.getMessage(), Toast.LENGTH_SHORT).show();
         });
     }
-
 
     public void getTeams(List<Team> list, TeamAdapter adapter) {
         db.collection("teams").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -347,6 +362,23 @@ public class DbHelper {
         });
     }
 
+public void updateResults(String team1,String team2,String team_id)
+{
+db.collection("games").document(team_id).update("score_team1",team1);
+db.collection("games").document(team_id).update("score_team_2",team2).addOnSuccessListener(new OnSuccessListener<Void>() {
+    @Override
+    public void onSuccess(Void unused) {
+        Toast.makeText(context, "Game Results Updated Successfully!", Toast.LENGTH_SHORT).show();
+    }
+});
+}
 
-
+    public void deleteGame(String game_id) {
+        db.collection("games").document(game_id).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(context, "Game deleted successfully!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

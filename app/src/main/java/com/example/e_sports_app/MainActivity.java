@@ -6,10 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.example.e_sports_app.helpers.PreferenceHelper;
 
 public class MainActivity extends Activity {
-
-
     Button open_register,open_login;
 
     @Override
@@ -19,8 +20,7 @@ public class MainActivity extends Activity {
 
         open_login = findViewById(R.id.open_login);
         open_register = findViewById(R.id.open_register);
-
-        open_login.setOnClickListener(v->{
+       open_login.setOnClickListener(v->{
             startActivity(new Intent(this,LoginActivity.class));
         });
 

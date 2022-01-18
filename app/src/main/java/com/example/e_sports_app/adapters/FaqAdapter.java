@@ -17,10 +17,10 @@ import com.example.e_sports_app.data.getFaq;
 import java.util.List;
 
 public class FaqAdapter extends RecyclerView.Adapter<FaqAdapter.ViewHolder> {
-    private List<Faq> UserList;
+    private List<getFaq> UserList;
     private Context context;
     UserListener listener;
-    public FaqAdapter(List<Faq>UserList, Context context, UserListener listener){
+    public FaqAdapter(List<getFaq>UserList, Context context, UserListener listener){
 
         this.UserList=UserList;
         this.context=context;

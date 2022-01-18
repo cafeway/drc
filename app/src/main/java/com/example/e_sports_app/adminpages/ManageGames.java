@@ -2,10 +2,15 @@ package com.example.e_sports_app.adminpages;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +19,8 @@ import com.example.e_sports_app.adapters.FeedbackAdapter;
 import com.example.e_sports_app.adapters.GamesAdapter;
 import com.example.e_sports_app.data.Feedback;
 import com.example.e_sports_app.data.Game;
+import com.example.e_sports_app.data.User;
+import com.example.e_sports_app.dialogs.ViewDialog;
 import com.example.e_sports_app.helpers.DbHelper;
 
 import java.util.ArrayList;
@@ -47,6 +54,7 @@ GamesAdapter adapter;
 
         getGames();
     }
+
     @Override
     public void onBackPressed(){
         super.onBackPressed();
@@ -57,6 +65,24 @@ GamesAdapter adapter;
     public boolean onNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item_notices,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.add_icon:
+                Intent intent = new Intent(getApplicationContext(),NewGameActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
     private void getGames() {
         DbHelper helper = new DbHelper(this);
@@ -69,11 +95,32 @@ GamesAdapter adapter;
 
     @Override
     public void onDeleteGameClick(int position) {
-        Toast.makeText(getApplicationContext(), "Delete Game Clicked", Toast.LENGTH_SHORT).show();
+        Game gameItem = list.get(position);
+        confirm("delete",gameItem);
     }
 
     @Override
     public void onResultsBtnClick(int position) {
-        Toast.makeText(getApplicationContext(), "Results Button Clicked", Toast.LENGTH_SHORT).show();
+        Game item = list.get(position);
+        ViewDialog dialog = new ViewDialog();
+        dialog.showResultsDialog(ManageGames.this,item.getGame_id());
+    }
+
+    public void confirm(String message, Game gameItem)
+    {
+        AlertDialog.Builder alert = new AlertDialog.Builder(ManageGames.this);
+        alert.setTitle(message);
+        alert.setMessage("Confirm "+message);
+        alert.setPositiveButton("Yes", (dialog, which) -> {
+            if (message.equals("delete"))
+            {
+                helper.deleteGame(gameItem.getGame_id());
+                dialog.dismiss();
+            }
+
+        });
+
+        alert.setNegativeButton("No", (dialog, which) -> dialog.dismiss());
+        alert.show();
     }
 }

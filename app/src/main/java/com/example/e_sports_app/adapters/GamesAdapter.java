@@ -34,7 +34,7 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.ViewHolder> 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_manage_users,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_manage_game,parent,false);
         return new ViewHolder(view);
     }
 
@@ -64,16 +64,14 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tv_one_name=itemView.findViewById(R.id.manage_user_name);
-            tv_two_name=itemView.findViewById(R.id.manage_user_email);
-            tv_one_result=itemView.findViewById(R.id.manage_user_type);
-            tv_two_result=itemView.findViewById(R.id.manage_user_phone_number);
+            tv_one_name=itemView.findViewById(R.id.manage_game_one);
+            tv_two_name=itemView.findViewById(R.id.manage_game_two);
+            tv_one_result=itemView.findViewById(R.id.team_one_results);
+            tv_two_result=itemView.findViewById(R.id.team_two_results);
 
-            btn_edit = itemView.findViewById(R.id.edit_game);
             btn_delete = itemView.findViewById(R.id.manage_game_delete);
             btn_results = itemView.findViewById(R.id.add_game_results);
 
-            btn_edit.setOnClickListener(v -> listener.onEditGameClick(getAdapterPosition()));
             btn_delete.setOnClickListener(v -> listener.onDeleteGameClick(getAdapterPosition()));
             btn_results.setOnClickListener(v -> listener.onResultsBtnClick(getAdapterPosition()));
 

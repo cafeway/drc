@@ -26,7 +26,7 @@ public class ManageFaq extends Activity implements FaqAdapter.UserListener{
 Toolbar toolbar;
 RecyclerView recyclerView;
 FaqAdapter adapter;
-List<Faq> list = new ArrayList<>();
+List<getFaq> list = new ArrayList<>();
 DbHelper helper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

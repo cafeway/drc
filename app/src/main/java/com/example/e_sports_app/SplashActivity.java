@@ -10,6 +10,7 @@ import android.os.Handler;
 import com.example.e_sports_app.dashboards.UserDashBoard;
 import com.example.e_sports_app.data.User;
 import com.example.e_sports_app.helpers.DbHelper;
+import com.example.e_sports_app.helpers.PreferenceHelper;
 
 public class SplashActivity extends Activity {
     SharedPreferences pref;
@@ -20,9 +21,11 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         helper =new DbHelper(this);
+
         User user = new User("Admin","admin@gmail.com","072200000","admin1234","approved","admin");
         helper.checkUser(user);
         new Handler().postDelayed(() -> checkLogin(),2000);
+
     }
 
     private void checkLogin() {

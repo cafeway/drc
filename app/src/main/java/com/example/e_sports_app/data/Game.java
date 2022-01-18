@@ -1,9 +1,10 @@
 package com.example.e_sports_app.data;
 
 public class Game {
-    String team1_name,team2_name,play_date,play_time,score_team1,score_team_2,game_status;
+    String game_id, team1_name, team2_name, play_date, play_time, score_team1, score_team_2, game_status;
 
-    public Game(String team1_name, String team2_name, String play_date, String play_time, String score_team1, String score_team_2, String game_status) {
+    public Game(String game_id, String team1_name, String team2_name, String play_date, String play_time, String score_team1, String score_team_2, String game_status) {
+        this.game_id = game_id;
         this.team1_name = team1_name;
         this.team2_name = team2_name;
         this.play_date = play_date;
@@ -11,6 +12,14 @@ public class Game {
         this.score_team1 = score_team1;
         this.score_team_2 = score_team_2;
         this.game_status = game_status;
+    }
+
+    public String getGame_id() {
+        return game_id;
+    }
+
+    public void setGame_id(String game_id) {
+        this.game_id = game_id;
     }
 
     public String getTeam1_name() {

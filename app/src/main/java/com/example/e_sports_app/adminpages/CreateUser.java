@@ -24,7 +24,7 @@ public class CreateUser extends Activity implements AdapterView.OnItemSelectedLi
     Spinner spinner;
     String selected_user_type;
     Toolbar toolbar;
-    String[] user_type = { "Admin", "Captain", "Facilitator"};
+    String[] user_type = { "admin", "captain", "facilitator", "user"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +44,7 @@ public class CreateUser extends Activity implements AdapterView.OnItemSelectedLi
         registerButton=findViewById(R.id.registerBtn);
 
         setActionBar(toolbar);
-        getActionBar().setTitle("Manage Users");
+        getActionBar().setTitle("Create User");
         getActionBar().setDisplayShowHomeEnabled(true);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -68,9 +68,7 @@ public class CreateUser extends Activity implements AdapterView.OnItemSelectedLi
         registerButton.setOnClickListener(v -> {
 //                Check if passwords match
             if(inputPassword1.getText().toString().equals(inputPassword2.getText().toString())) {
-
-//                    Pass data to data class and pass data class to function
-
+//              Pass data to data class and pass data class to function
                 User user = new User(inputName.getText().toString(), inputEmail.getText().toString(),inputPhone.getText().toString(), inputPassword1.getText().toString(),"pending",selected_user_type);
                 helper.registerUser(user);
             }

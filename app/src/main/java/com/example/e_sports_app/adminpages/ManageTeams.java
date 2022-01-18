@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Spinner;
 import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
@@ -28,6 +29,8 @@ public class ManageTeams extends Activity implements TeamAdapter.UserListener{
     RecyclerView recyclerView;
     TeamAdapter adapter;
     List<Team> list = new ArrayList<>();
+
+    Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,8 +72,11 @@ public class ManageTeams extends Activity implements TeamAdapter.UserListener{
     }
     @Override
     public void onAddBtnClick(int position) {
-        Intent intent = new Intent(getApplicationContext(),NewGameActivity.class);
+        Team item = list.get(position);
+        Intent intent = new Intent(getApplicationContext(),AddPlayerActivity.class);
+        intent.putExtra("team_id",item.getId());
         startActivity(intent);
+
     }
 
     @Override

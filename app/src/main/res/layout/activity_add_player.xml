@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:padding="10dp"
-    android:layout_height="250dp">
-
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".adminpages.AddPlayerActivity">
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolBar"
+        android:background="#FD2BF307"
+        />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="player name"
-        android:id="@+id/team_name"
+        android:id="@+id/player_name"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="player shirt number"
-        android:id="@+id/team_description"
+        android:id="@+id/player_shirt_number"
         />
     <TextView
         android:layout_width="match_parent"
