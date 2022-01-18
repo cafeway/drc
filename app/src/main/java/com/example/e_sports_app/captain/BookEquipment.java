@@ -1,6 +1,7 @@
 package com.example.e_sports_app.captain;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +12,7 @@ import com.example.e_sports_app.R;
 import com.example.e_sports_app.data.EquipMent;
 import com.example.e_sports_app.helpers.DbHelper;
 
-public class BookEquipment extends AppCompatActivity {
+public class BookEquipment extends Activity {
 Button submit_request;
 EditText request_title,request_message;
     @Override

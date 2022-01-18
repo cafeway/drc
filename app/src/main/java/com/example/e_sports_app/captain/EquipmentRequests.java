@@ -1,6 +1,7 @@
 package com.example.e_sports_app.captain;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,7 +24,7 @@ import com.example.e_sports_app.helpers.DbHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EquipmentRequests extends AppCompatActivity implements EquipmentAdapter.UserListener{
+public class EquipmentRequests extends Activity implements EquipmentAdapter.UserListener{
 
     Toolbar toolbar;
     RecyclerView recyclerView;

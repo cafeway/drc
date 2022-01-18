@@ -1,5 +1,6 @@
 package com.example.e_sports_app.adminpages;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -17,7 +18,7 @@ import com.example.e_sports_app.helpers.DbHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ManageRequests extends AppCompatActivity implements AdminEquipmentAdapter.UserListener {
+public class ManageRequests extends Activity implements AdminEquipmentAdapter.UserListener {
     Toolbar toolbar;
     RecyclerView recyclerView;
     AdminEquipmentAdapter adapter;
