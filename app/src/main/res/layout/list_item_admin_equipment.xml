@@ -23,12 +23,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/approve_request"
         android:background="#30F638"
+        android:text="approve"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/reject_request"
         android:background="#F31202"
+        android:text="reject"
         />
-
 </LinearLayout>
