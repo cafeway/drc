@@ -202,7 +202,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@drawable/feedback"
+                    android:src="@drawable/teams"
                     />
                 <!-- Title, secondary and supporting text -->
                 <TextView
@@ -238,7 +238,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:src="@drawable/feedback"
+                        android:src="@drawable/requests"
                         />
                     <!-- Title, secondary and supporting text -->
                     <TextView
@@ -268,7 +268,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:src="@drawable/feedback"
+                        android:src="@drawable/logout"
                         />
                     <!-- Title, secondary and supporting text -->
                     <TextView

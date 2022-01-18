@@ -53,9 +53,11 @@ MaterialCardView open_games,open_fAs,open_feedback,open_notices,open_team_member
             startActivity(new Intent(getApplicationContext(), EquipmentRequests.class));
         });
 
+
         if (preferenceHelper.getType().equals("captain"))
         {
             open_team_members.setVisibility(View.VISIBLE);
+            open_requests.setVisibility(View.VISIBLE);
         }
 
 
