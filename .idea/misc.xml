@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/drawable/edit_text_style.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/drawable/edit_text_style1.xml" value="0.2203125" />
+        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/drawable/edit_text_style_two.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_add_player.xml" value="0.13177083333333334" />
-        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.5" />
+        <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.25" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_book_equipment.xml" value="0.1" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_create_faq.xml" value="0.1" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/layout/activity_create_notice.xml" value="0.18" />

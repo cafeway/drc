@@ -34,7 +34,7 @@ Toolbar toolbar;
         team_add_btn = findViewById(R.id.team_add_btn);
         toolbar = findViewById(R.id.toolBar);
         setActionBar(toolbar);
-        getActionBar().setTitle("Add Player");
+        getActionBar().setTitle("Add Players");
         getActionBar().setDisplayShowHomeEnabled(true);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         team_id = getIntent().getStringExtra("team_id");
@@ -69,4 +69,16 @@ Toolbar toolbar;
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        this.finish();
+    }
+
+    @Override
+    public boolean onNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
 }

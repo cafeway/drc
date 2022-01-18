@@ -18,19 +18,23 @@
             android:layout_height="wrap_content"
             android:hint="Feedback title"
             android:id="@+id/feedback_title"
+            android:background="@drawable/edit_text_style"
             />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginTop="20dp"
             android:hint="Feedback description"
             android:id="@+id/feedback_description"
+            android:background="@drawable/edit_text_style"
             />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="send"
             android:id="@+id/send_feedback"
+            android:layout_marginTop="5dp"
             />
     </LinearLayout>
 </LinearLayout>

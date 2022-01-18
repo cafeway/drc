@@ -26,6 +26,7 @@
             android:layout_height="match_parent"
             android:hint="Notice Title"
             android:id="@+id/notification_title"
+            android:background="@drawable/edit_text_style"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -33,7 +34,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:hint="Type Message"
-        android:background="@drawable/edit_text_style1"
+        android:background="@drawable/edit_text_style"
         android:id="@+id/notification_message"
         android:layout_height="170dp"/>
 
