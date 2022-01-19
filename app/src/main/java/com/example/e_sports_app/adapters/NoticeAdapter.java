@@ -21,7 +21,6 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
     private List<Notice> UserList;
     private Context context;
     public NoticeAdapter(List<Notice>UserList, Context context){
-
         this.UserList=UserList;
         this.context=context;
     }
@@ -55,8 +54,6 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
             tv_title=itemView.findViewById(R.id.not_title);
             tv_description=itemView.findViewById(R.id.not_description);
             tv_time=itemView.findViewById(R.id.not_time);
-
-
         }
 
         public void setData(String title, String description){

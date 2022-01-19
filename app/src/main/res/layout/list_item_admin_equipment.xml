@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:padding="10dp"
+    android:layout_height="wrap_content">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -11,19 +12,30 @@
     <TextView
         android:layout_width="match_parent"
         android:id="@+id/tv_message"
+        android:layout_marginTop="5dp"
         android:layout_height="wrap_content"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_status"
+        android:layout_marginTop="5dp"
         android:textColor="#30F638"
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        >
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/approve_request"
         android:background="#30F638"
         android:text="approve"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="5dp"
         />
     <Button
         android:layout_width="wrap_content"
@@ -31,5 +43,8 @@
         android:id="@+id/reject_request"
         android:background="#F31202"
         android:text="reject"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="5dp"
         />
+    </LinearLayout>
 </LinearLayout>
