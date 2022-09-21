@@ -50,6 +50,10 @@
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/menu/menu_item_notices.xml" value="0.10833333333333334" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/menu/menu_item_users.xml" value="0.1" />
         <entry key="..\:/Users/Limo/AndroidStudioProjects/E_Sports_App/app/src/main/res/menu/menu_items.xml" value="0.10833333333333334" />
+        <entry key="app/src/main/res/layout/activity_admin_dashboard.xml" value="0.32135416666666666" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="app/src/main/res/layout/activity_user_dash_board.xml" value="0.32135416666666666" />
       </map>
     </option>
   </component>
