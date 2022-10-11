@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".adminpages.AddPlayerActivity">
-    <Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#180A95"
         android:id="@+id/toolBar"
-        android:background="#FD2BF307"
+        app:titleTextColor="@color/white"
+        app:theme="@style/ToolbarTheme"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,6 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="player shirt number"
+        android:layout_marginTop="10dp"
         android:id="@+id/player_shirt_number"
         android:background="@drawable/edit_text_style"
         />
@@ -37,6 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Choose role"
+        android:layout_marginTop="10dp"
         />
     <Spinner
         android:layout_width="match_parent"
@@ -48,6 +52,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/team_add_btn"
         android:text="done"
+        style="@style/welcome_reg"
         />
     </LinearLayout>
 </LinearLayout>

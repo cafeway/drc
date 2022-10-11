@@ -35,6 +35,7 @@
             android:text="send"
             android:id="@+id/send_feedback"
             android:layout_marginTop="5dp"
+            style="@style/welcome_reg"
             />
     </LinearLayout>
 </LinearLayout>

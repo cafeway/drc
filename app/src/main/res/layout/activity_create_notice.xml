@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".adminpages.CreateNotice">
-    <Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#180A95"
         android:id="@+id/toolBar"
-        android:background="#FD2BF307"
+        app:titleTextColor="@color/white"
+        app:theme="@style/ToolbarTheme"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +33,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:hint="Type Message"
 
@@ -45,6 +47,7 @@
         android:id="@+id/send_notification"
         android:text="notify"
         android:layout_marginTop="15dp"
+        style="@style/welcome_reg"
         />
     </LinearLayout>
 </LinearLayout>

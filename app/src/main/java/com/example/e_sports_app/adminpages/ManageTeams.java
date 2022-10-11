@@ -45,7 +45,7 @@ public class ManageTeams extends Activity implements TeamAdapter.UserListener{
         manager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
-
+        this.setActionBar(toolbar);
         setActionBar(toolbar);
         getActionBar().setTitle("Manage Teams");
         getActionBar().setDisplayShowHomeEnabled(true);
