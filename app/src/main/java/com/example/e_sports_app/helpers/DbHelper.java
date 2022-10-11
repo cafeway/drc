@@ -93,20 +93,17 @@ public class DbHelper {
                 if (pass.equals(password))
                 {
                     if (res.get("usertype").toString().equals("user") || res.get("usertype").toString().equals("captain")) {
-                        if (res.get("status").toString().equals("pending"))
-                        {
-
-                            Toast.makeText(context.getApplicationContext(), "Please wait for approval by the admin!!", Toast.LENGTH_LONG).show();
-                        }
-                        else
-                        {
+//                        if (res.get("status").toString().equals("pending"))
+//                        {
+//                            Toast.makeText(context.getApplicationContext(), "Please wait for approval by the admin!!", Toast.LENGTH_LONG).show();
+//                        }else{
                             Toast.makeText(context, "Logged in successfully!!", Toast.LENGTH_SHORT).show();
                             PreferenceHelper preferenceHelper = new PreferenceHelper(context);
                             String type = res.get("usertype").toString();
                             preferenceHelper.setType(type);
                             preferenceHelper.setEmail(email);
                             context.startActivity(new Intent(context, UserDashBoard.class));
-                        }
+//                        }
 
                     }
                     else if (res.get("usertype").toString().equals("admin"))
