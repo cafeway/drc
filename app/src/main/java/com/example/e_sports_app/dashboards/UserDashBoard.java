@@ -56,8 +56,8 @@ MaterialCardView open_games,open_fAs,open_feedback,open_notices,open_team_member
 
 //        if (preferenceHelper.getType().equals("admin"))
 //        {
-            open_team_members.setVisibility(View.VISIBLE);
-            open_requests.setVisibility(View.VISIBLE);
+//            open_team_members.setVisibility(View.VISIBLE);
+//            open_requests.setVisibility(View.VISIBLE);
 //        }
 
 

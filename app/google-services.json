@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "675259147950",
-    "project_id": "e-sports-fb8f1",
-    "storage_bucket": "e-sports-fb8f1.appspot.com"
+    "project_number": "947606558572",
+    "project_id": "sportsapp-b1080",
+    "storage_bucket": "sportsapp-b1080.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:675259147950:android:0a017916a40381dedb2f3f",
+        "mobilesdk_app_id": "1:947606558572:android:c821f398e9859fe90ac549",
         "android_client_info": {
           "package_name": "com.example.e_sports_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "675259147950-h8lvf8j88u9iuc4u0mdffm3386bcs968.apps.googleusercontent.com",
+          "client_id": "947606558572-o19sqifnevel55v2jnd3m9up5120bvp5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAb53aVmaw1g6947RVAuqLAcwo_S2Hy9QI"
+          "current_key": "AIzaSyBRVUc0iG5qo7TEo06XIg9i5aTuR3NvmyA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "675259147950-h8lvf8j88u9iuc4u0mdffm3386bcs968.apps.googleusercontent.com",
+              "client_id": "947606558572-o19sqifnevel55v2jnd3m9up5120bvp5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -10,17 +10,26 @@
         android:layout_height="wrap_content"
         android:hint="team_name"
         android:id="@+id/team_name"
+        android:background="@drawable/edit_text_background"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="team description"
+        android:layout_marginTop="15dp"
         android:id="@+id/team_description"
+        android:background="@drawable/edit_text_background"
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/mybuttons"
         android:id="@+id/team_add_btn"
         android:text="done"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:backgroundTint="@color/dark_pink"
+        android:foreground="?attr/selectableItemBackground"
+
         />
 </LinearLayout>
